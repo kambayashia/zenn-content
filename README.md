@@ -10,6 +10,10 @@
 
 ## usage
 
+preview
+```
+% npx zenn preview
+```
 
 linter
 ```
