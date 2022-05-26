@@ -8,7 +8,7 @@ published: true
 
 # 概要
 
-- Amazon Linux 2 でTimezoneを変更する方法を記載しておきます。
+- Amazon Linux 2でTimezoneを変更する方法を記載しておきます。
 
 # 設定
 
