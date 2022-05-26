@@ -10,5 +10,8 @@
     "textlint": "^11.7.6",
     "textlint-rule-preset-ja-spacing": "^2.2.0",
     "textlint-rule-preset-ja-technical-writing": "^4.0.1"
+  },
+  "scripts": {
+    "lint": "textlint 'articles/**/*.md'"
   }
 }

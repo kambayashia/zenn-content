@@ -31,7 +31,10 @@
     // JavaScript とか WordPress などの固有名詞を正しく書くためのフレーズ定義
     "prh": {
       "rulePaths": [
-        "./prh/software.yml"
+        "./prh/software.yml",
+        "./prh/css.yml",
+        "./prh/javascript.yml",
+        "./prh/other.yml",
       ]
     }
   }

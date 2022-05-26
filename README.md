@@ -17,7 +17,7 @@ preview
 
 linter
 ```
-% npx textlint articles
+% npm run lint
 ```
 
 
