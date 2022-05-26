@@ -2,7 +2,7 @@
 title: "Amazon Linux 2のTimezone変更"
 emoji: "🕙"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["AWS", "EC2", "Timezone", "Linux", "JST", "UTC]
+topics: ["AWS", "EC2", "Timezone", "Linux", "JST", "UTC"]
 published: true
 ---
 
