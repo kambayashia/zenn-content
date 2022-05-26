@@ -12,10 +12,6 @@
         "before": true,
         "after": true
       },
-      // アルファベットの前後はスペースをいれたほうが見た目が安定しやすいので有効化
-      "ja-space-between-half-and-full-width": {
-        "space": "always"
-      }
     },
     // 日本語の技術文書を念頭においたプリセットルール群
     "preset-ja-technical-writing": {
@@ -32,16 +28,10 @@
       // zenn の Markdown 方言である :::message および :::details と相性が悪いため無効化
       "ja-no-mixed-period": false
     },
-    // ja-space-between-half-and-full-width がリンクには反応しないのでこちらでカバー
-    // 日本語で構成されているリンクには不要なのだけどやむなく
-    "ja-space-around-link": {
-      "before": true,
-      "after": true
-    },
     // JavaScript とか WordPress などの固有名詞を正しく書くためのフレーズ定義
     "prh": {
       "rulePaths": [
-        "./prh.yml"
+        "./prh/software.yml"
       ]
     }
   }
