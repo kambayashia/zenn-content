@@ -1,34 +1,48 @@
 {
-  "plugins": {
-    "@textlint/markdown": {
-      "extensions": [".md"]
-    }
+  "filters": {
+    // textlint-filter-rule-comments の設定
+    // 局所的な脱出ハッチのため <!-- textlint-disable xxx-rule --> を有効化
+    "comments": true
   },
   "rules": {
-    "@proofdict/proofdict": {
-      "dictURL": "https://azu.github.io/proof-dictionary/"
-    },
-    "preset-ja-technical-writing": {
-        "no-exclamation-question-mark": {
-        "allowFullWidthExclamation": true,
-        "allowFullWidthQuestion": true,
-      },
-      "no-doubled-joshi": {
-         "strict": false,
-         "allow": ["か"], // 助詞のうち「か」は複数回の出現を許す(e.g.: するかどうか)
-      }
-    },
+    // 日本語におけるスペースの扱いを定義したプリセットルール群
     "preset-ja-spacing": {
+      // インラインコードの前後はスペースをいれたほうが見た目が安定しやすいので有効化
       "ja-space-around-code": {
         "before": true,
         "after": true
+      },
+      // アルファベットの前後はスペースをいれたほうが見た目が安定しやすいので有効化
+      "ja-space-between-half-and-full-width": {
+        "space": "always"
       }
     },
-    "ja-technical-writing/ja-no-mixed-period": {
-      "allowPeriodMarks": [":"],
+    // 日本語の技術文書を念頭においたプリセットルール群
+    "preset-ja-technical-writing": {
+      // 初期設定の100文字制限だと窮屈そうだったので150文字制限に拡張
+      "sentence-length": {
+        "max": 150
+      },
+      // テックブログはお堅い文書ではないので感嘆符（！、？）を許可
+      "no-exclamation-question-mark": false,
+      // 「かも」とか「思います」のような歯切れの悪い表現を許可
+      "ja-no-weak-phrase": false,
+      // 「あるある」とか「つよつよ」のようなスラングのために単語の連続を許可
+      "ja-no-successive-word": false,
+      // zenn の Markdown 方言である :::message および :::details と相性が悪いため無効化
+      "ja-no-mixed-period": false
     },
-    "ja-technical-writing/sentence-length": false, //100文字数制限の無効化
-    "ja-technical-writing/ja-no-weak-phrase": false // 思います という表記を許容
+    // ja-space-between-half-and-full-width がリンクには反応しないのでこちらでカバー
+    // 日本語で構成されているリンクには不要なのだけどやむなく
+    "ja-space-around-link": {
+      "before": true,
+      "after": true
+    },
+    // JavaScript とか WordPress などの固有名詞を正しく書くためのフレーズ定義
+    "prh": {
+      "rulePaths": [
+        "./prh.yml"
+      ]
+    }
   }
 }
-
